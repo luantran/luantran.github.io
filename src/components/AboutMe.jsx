@@ -1,4 +1,4 @@
-import profileImg from '../assets/profile-cropped.jpg'
+import profileImg from '../assets/cropped-profile.jpg'
 import resumePdf from '../assets/resume.pdf'
 
 import { FaLinkedin, FaGithub, FaFileDownload } from 'react-icons/fa'
@@ -45,7 +45,7 @@ function AboutMe() {
                                 </a>
                             </div>
                         </div>
-                        <div className="flex items-center justify-center">
+                        <div className="flex items-center justify-center h-screen">
                             <img
                                 src={profileImg}
                                 alt="Luan Tran profile picture"
