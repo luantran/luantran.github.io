@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -43,23 +43,6 @@ jobs:
           NODE_ENV: production
           VITE_BASE_PATH: ${{ github.ref_name == 'master' && '/' || format('/{0}/', github.ref_name) }}
 
-      # Add these debug steps:
-      - name: Debug - Show branch and base path
-        run: |
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Base path: ${{ github.ref_name == 'master' && '/' || format('/{0}/', github.ref_name) }}"
-
-      - name: Debug - List dist contents
-        run: |
-          echo "Contents of dist directory:"
-          ls -la dist/
-          echo "File count:"
-          find dist -type f | wc -l
-
-      - name: Debug - Show destination
-        run: |
-          echo "Destination directory: ${{ steps.destination.outputs.dir }}"
-
       - name: Set destination directory
         id: destination
         run: |
@@ -76,4 +59,3 @@ jobs:
           publish_dir: ./dist
           destination_dir: ${{ steps.destination.outputs.dir }}
           keep_files: true
-          force_orphan: false
