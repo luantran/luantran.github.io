@@ -1,29 +1,8 @@
 import SectionArrow from "./SectionArrow.jsx";
-import skillsData from "../data/skills.json";
+import {skillsData} from "./data/skills.js";
 import { iconMap } from "../utils/iconMap.js";
 
 function Skills() {
-    const renderSkillBox = (categoryName, skills) => {
-        return (
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 min-w-80" key={categoryName}>
-                <h1 className="text-xl text-white text-center mb-6 font-mono capitalize">
-                    {categoryName}
-                </h1>
-                <ul className="flex flex-wrap gap-2 justify-center">
-                    {skills.map((skill) => {
-                        const IconComponent = iconMap[skill.icon];
-                        return (
-                            <li key={skill.name} className="flex flex-col items-center w-16 sm:w-20 md:w-24">
-                                <IconComponent className="text-3xl sm:text-4xl text-white mb-2" />
-                                <p className="text-xs sm:text-sm text-white text-center">{skill.name}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
-        );
-    };
-
     const renderDomainCard = (domain) => {
         const MainIcon = iconMap[domain.icon];
         return (
@@ -57,7 +36,7 @@ function Skills() {
         );
     };
 
-    const { domains, ...regularSkills } = skillsData;
+    const { domains } = skillsData;
 
     return (
         <section id="skills" className="min-h-screen flex flex-col items-center justify-between">

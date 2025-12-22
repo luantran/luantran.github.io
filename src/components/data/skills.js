@@ -1,0 +1,205 @@
+export const skillsData = {
+    languages: [
+        {
+            name: "Python",
+            icon: "FaPython"
+        },
+        {
+            name: "Java",
+            icon: "FaJava"
+        },
+        {
+            name: "Bash",
+            icon: "FaTerminal"
+        },
+        {
+            name: "JavaScript",
+            icon: "FaJs"
+        }
+    ],
+    environments: [
+        {
+            name: "Windows",
+            icon: "FaWindows"
+        },
+        {
+            name: "Linux",
+            icon: "FaLinux"
+        },
+        {
+            name: "Ubuntu",
+            icon: "FaUbuntu"
+        }
+    ],
+    virtualization: [
+        {
+            name: "VirtualBox",
+            icon: "SiVirtualbox"
+        },
+        {
+            name: "Docker",
+            icon: "FaDocker"
+        },
+        {
+            name: "Hyper-V",
+            icon: "FaTerminal"
+        }
+    ],
+    frameworks: [
+        {
+            name: "Flask",
+            icon: "SiFlask"
+        },
+        {
+            name: "Node.js",
+            icon: "FaNode"
+        },
+        {
+            name: "WordPress",
+            icon: "FaWordpress"
+        },
+        {
+            name: "React",
+            icon: "FaReact"
+        },
+        {
+            name: "Google Cloud",
+            icon: "FaGoogle"
+        },
+        {
+            name: "Play",
+            icon: "FaPlay"
+        }
+    ],
+    "CI/CD": [
+        {
+            name: "Git",
+            icon: "FaGitAlt"
+        },
+        {
+            name: "Github",
+            icon: "FaGithub"
+        },
+        {
+            name: "Jenkins",
+            icon: "FaJenkins"
+        },
+        {
+            name: "Bitbucket",
+            icon: "FaBitbucket"
+        },
+        {
+            name: "JIRA",
+            icon: "FaJira"
+        },
+        {
+            name: "Concourse",
+            icon: "SiConcourse"
+        }
+    ],
+    "Machine Learning": [
+        {
+            name: "PyTorch",
+            icon: "SiPytorch"
+        },
+        {
+            name: "Scikit-learn",
+            icon: "SiScikitlearn"
+        },
+        {
+            name: "Pandas",
+            icon: "SiPandas"
+        },
+        {
+            name: "NumPy",
+            icon: "SiNumpy"
+        },
+        {
+            name: "Jupyter",
+            icon: "SiJupyter"
+        }
+    ],
+    domains: [
+        {
+            name: "Web Development",
+            description: "Full-stack applications with modern frameworks and RESTful APIs",
+            icon: "FaCode",
+            relatedSkills: [
+                {
+                    icon: "FaReact",
+                    displayName: "React"
+                },
+                {
+                    icon: "FaNode",
+                    displayName: "Node.js"
+                },
+                {
+                    icon: "SiFlask",
+                    displayName: "Flask"
+                },
+                {
+                    icon: "FaJs",
+                    displayName: "JavaScript"
+                },
+                {
+                    icon: "FaPython",
+                    displayName: "Python"
+                }
+            ]
+        },
+        {
+            name: "Machine Learning",
+            description: "ML models, data analysis, and NLP solutions",
+            icon: "FaBrain",
+            relatedSkills: [
+                {
+                    icon: "SiPytorch",
+                    displayName: "PyTorch"
+                },
+                {
+                    icon: "SiScikitlearn",
+                    displayName: "Scikit-learn"
+                },
+                {
+                    icon: "SiPandas",
+                    displayName: "Pandas"
+                },
+                {
+                    icon: "SiNumpy",
+                    displayName: "NumPy"
+                },
+                {
+                    icon: "SiJupyter",
+                    displayName: "Jupyter"
+                }
+            ]
+        },
+        {
+            name: "DevOps & Cloud",
+            description: "CI/CD pipelines, containerization, and cloud infrastructure",
+            icon: "FaCloud",
+            relatedSkills: [
+                {
+                    icon: "FaDocker",
+                    displayName: "Docker"
+                },
+                {
+                    icon: "FaGitAlt",
+                    displayName: "Git"
+                },
+                {
+                    icon: "FaJenkins",
+                    displayName: "Jenkins"
+                },
+                {
+                    icon: "FaGoogle",
+                    displayName: "Google Cloud"
+                },
+                {
+                    icon: "SiConcourse",
+                    displayName: "Concourse"
+                }
+            ]
+        }
+    ]
+};
