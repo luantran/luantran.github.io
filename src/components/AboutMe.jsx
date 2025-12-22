@@ -15,9 +15,10 @@ function AboutMe() {
                         <div>
                             <h1 className="text-6xl font-extrabold font-mono mb-6 text-white">Luan Tran</h1>
                             <p className="mb-6 text-white">
-                                I'm a Master's of Applied Computer Science student with a passion for machine learning and web development.
-                                I've worked on projects ranging from English proficiency classification to reactive web applications. Currently, I'm exploring ways to integrate using LLMs as agents in the context
-                                of linguistic education (French and English) and looking for opportunities in Web Development/Machine Learning.
+                                I'm a Master's student in Applied Computer Science with industry experience in automation and web development at Broadsign, Ericsson, and Matrox. My projects include deploying automated CI/CD workflows, multimodal medical imaging applications, and automated language proficiency assessment systems.
+                            </p>
+                            <p className="mb-6 text-white">
+                                I'm currently researching LLM-based agents for linguistic education and seeking opportunities in software development and machine learning.
                             </p>
                             <div className="flex justify-between items-center">
                                 <ul className="flex gap-4">

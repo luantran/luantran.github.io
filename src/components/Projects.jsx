@@ -43,8 +43,7 @@ const ProjectCard = ({ project }) => {
                 <div className="flex flex-col space-y-1.5 p-6 pb-3">
 
                         {/* Category Badge */}
-                    <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-zinc-600/70 bg-transparent text-[10px] font-mono uppercase tracking-[0.16em] text-zinc-300 whitespace-nowrap w-fit">
-                            <Code className="mr-1 h-3 w-3" />
+                    <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-zinc-600/70 bg-transparent text-[12px] font-mono uppercase tracking-[0.16em] text-zinc-300 whitespace-nowrap w-fit">
                             {project.category}
                         </div>
 
