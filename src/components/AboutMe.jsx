@@ -1,4 +1,4 @@
-import profileImg from '../assets/cropped-profile.jpg'
+import profileImg from '../assets/images/cropped-profile.jpg'
 import resumePdf from '../assets/resume.pdf'
 
 import { FaLinkedin, FaGithub, FaFileDownload } from 'react-icons/fa'
@@ -15,11 +15,9 @@ function AboutMe() {
                         <div>
                             <h1 className="text-6xl font-extrabold font-mono mb-6 text-white">Luan Tran</h1>
                             <p className="mb-6 text-white">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et urna in quam vehicula pretium vitae sed lorem.
-                                Phasellus egestas convallis euismod. Cras magna magna, vestibulum quis iaculis non, mattis vel nulla.
-                                Praesent dictum at purus vel fringilla. Nulla feugiat tincidunt pulvinar. Donec posuere nisl vel molestie blandit.
-                                Sed ornare velit eu vestibulum lacinia. Fusce et eros dui. Sed ante mi, ornare et cursus scelerisque, egestas et risus.
-                                Etiam odio ex, maximus ac imperdiet vitae, bibendum ut ipsum.
+                                I'm a Master's of Applied Computer Science student with a passion for machine learning and web development.
+                                I've worked on projects ranging from English proficiency classification to reactive web applications. Currently, I'm exploring ways to integrate using LLMs as agents in the context
+                                of linguistic education (French and English) and looking for opportunities in Web Development/Machine Learning.
                             </p>
                             <div className="flex justify-between items-center">
                                 <ul className="flex gap-4">
