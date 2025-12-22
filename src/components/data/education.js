@@ -1,6 +1,6 @@
 // Import logos
-import mcgillLogo from '../../assets/mcgill_logo.png'
-import concordiaLogo from '../../assets/concordia_logo.png'
+import mcgillLogo from '../../assets/images/mcgill_logo.png'
+import concordiaLogo from '../../assets/images/concordia_logo.png'
 
 export const educationData = [
     {

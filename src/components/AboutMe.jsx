@@ -1,4 +1,4 @@
-import profileImg from '../assets/cropped-profile.jpg'
+import profileImg from '../assets/images/cropped-profile.jpg'
 import resumePdf from '../assets/resume.pdf'
 
 import { FaLinkedin, FaGithub, FaFileDownload } from 'react-icons/fa'
