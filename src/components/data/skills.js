@@ -90,9 +90,29 @@ export const skillsData = {
             relatedSkills: [
                 { icon: "FaDocker", displayName: "Docker" },
                 { icon: "FaGitAlt", displayName: "Git" },
+                { icon: "FaGithub", displayName: "GitHub" },
                 { icon: "FaJenkins", displayName: "Jenkins" },
                 { icon: "FaGoogle", displayName: "Google Cloud" },
                 { icon: "SiConcourse", displayName: "Concourse" }
+            ]
+        },
+        {
+            name: {
+                en: "Backend Development",
+                fr: "Développement Backend"
+            },
+            description: {
+                en: "Backend systems, APIs, and enterprise applications using Java",
+                fr: "Systèmes backend, API et applications d’entreprise en Java"
+            },
+            icon: "FaServer",
+            relatedSkills: [
+                { icon: "FaJava", displayName: "Java" },
+                { icon: "FaPlay", displayName: "Play Framework" },
+                { icon: "SiPostgresql", displayName: "PostgreSQL" },
+                { icon: "SiGradle", displayName: "Maven/Gradle" },
+                { icon: "FaBug", displayName: "Unit/Integration Testing" }
+
             ]
         }
     ]
