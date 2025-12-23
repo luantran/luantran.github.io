@@ -1,8 +1,10 @@
 import SectionArrow from "./SectionArrow.jsx";
-import {educationData} from "./data/education.js"
+import { educationData } from "./data/education.js";
+import { useLanguage } from '../contexts/useLanguage.js';
+import { getText } from '../utils/translationHelpers';
 
-const EducationItem = ({ data, index }) => {
-    const { university, logo, degree, date, description, gpa } = data
+const EducationItem = ({ data, index, language }) => {
+    const { university, logo, degree, date } = data;
 
     return (
         <div className={`group relative ${index > 0 ? 'my-[5px] sm:-mt-10 md:-mt-12 lg:-mt-14 xl:-mt-16' : 'my-[5px] sm:my-[3px]'} flex w-full sm:w-1/2 justify-start sm:justify-end sm:pr-[22px] sm:odd:justify-start sm:odd:self-end sm:odd:pl-[22px] sm:odd:pr-0 md:pr-[30px] md:odd:pl-[30px]`}>
@@ -29,46 +31,68 @@ const EducationItem = ({ data, index }) => {
             sm:group-odd:after:border-r-0
             sm:group-odd:after:border-b-0">
 
-                {/* University Logo - responsive sizing */}
+                {/* University Logo */}
                 <img
                     src={logo}
-                    alt={`${university} logo`}
+                    alt={`${getText(university, language)} logo`}
                     className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain flex-shrink-0"
                 />
 
                 {/* Content */}
-                <div className="flex flex-col text-left sm:group-odd:text-right">
-                    <h3 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-white leading-tight">{university}</h3>
-                    <p className="text-xs sm:text-sm md:text-base lg:text-xl text-gray-300 mt-0.5 sm:mt-1">{degree}</p>
-                    <time className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 mt-0.5 sm:mt-1 md:mt-2">{date}</time>
+                <div className="flex flex-col text-left sm:group-odd:text-right min-w-0 flex-1">
+                    <h3
+                        className="font-bold text-white leading-tight break-words"
+                        style={{ fontSize: 'clamp(1rem, 2.5vw + 0.5rem, 1.875rem)' }}
+                    >
+                        {getText(university, language)}
+                    </h3>
+                    <p
+                        className="text-gray-300 mt-0.5 sm:mt-1 break-words"
+                        style={{ fontSize: 'clamp(0.75rem, 1.5vw + 0.3rem, 1.25rem)' }}
+                    >
+                        {getText(degree, language)}
+                    </p>
+                    <time
+                        className="text-gray-400 mt-0.5 sm:mt-1 md:mt-2 break-words"
+                        style={{ fontSize: 'clamp(0.7rem, 1.2vw + 0.25rem, 1.125rem)' }}
+                    >
+                        {date}
+                    </time>
                 </div>
 
-                {/* Timeline dot - hidden on mobile, visible on tablet+ */}
+                {/* Timeline dot */}
                 <span className="hidden sm:block absolute -right-8 top-[calc(50%-10px)] z-50 h-5 w-5 rounded-[50%] border-[3px] border-slate-400 bg-white group-odd:-left-8 group-odd:right-auto md:-right-10 md:group-odd:-left-10" />
             </div>
         </div>
-    )
+    );
 }
 
 function Education() {
+    const { language } = useLanguage();
+
+    const sectionTitle = {
+        en: "Education",
+        fr: "Éducation"
+    };
+
     return (
         <section id="education" className="min-h-screen flex flex-col items-center justify-between">
             <div className="flex-grow flex items-center justify-center w-full">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
-                        Education
+                        {getText(sectionTitle, language)}
                     </h2>
-                    {/* Timeline - hidden on mobile via opacity, visible on tablet+ */}
+                    {/* Timeline */}
                     <div className="relative my-6 sm:my-10 flex flex-col after:absolute after:left-[calc(50%_-_2px)] after:h-full after:w-1 after:bg-slate-400 after:opacity-0 sm:after:opacity-100">
                         {educationData.map((data, idx) => (
-                            <EducationItem data={data} index={idx} key={idx} />
+                            <EducationItem data={data} index={idx} language={language} key={idx} />
                         ))}
                     </div>
                 </div>
             </div>
             <SectionArrow targetSection="experience" />
         </section>
-    )
+    );
 }
 
 export default Education

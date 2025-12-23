@@ -1,10 +1,13 @@
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { projectData } from './data/projects.js';
-import {useState} from "react";
+import { useState } from "react";
+import { useLanguage } from '../contexts/useLanguage.js';
+import { getText, getArray } from '../utils/translationHelpers';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, language }) => {
     const [showGif, setShowGif] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
+
     return (
         <div className="relative group">
             {/* Animated Glow Border */}
@@ -19,17 +22,15 @@ const ProjectCard = ({ project }) => {
                     onMouseEnter={() => setShowGif(true)}
                     onMouseLeave={() => setShowGif(false)}
                 >
-                    {/* Placeholder - shows while image loads */}
                     {!imageLoaded && (
                         <div className="absolute inset-0 flex items-center justify-center bg-zinc-800/50">
                             <div className="animate-pulse text-zinc-400">Loading...</div>
                         </div>
                     )}
 
-                    {/* Actual Image */}
                     <img
                         src={showGif ? project.image : project.thumbnail}
-                        alt={project.title}
+                        alt={getText(project.title, language)}
                         loading="lazy"
                         decoding="async"
                         onLoad={() => setImageLoaded(true)}
@@ -40,44 +41,40 @@ const ProjectCard = ({ project }) => {
                 </div>
 
                 {/* Card Header */}
-                <div className="flex flex-col space-y-1.5 p-6 pb-3">
+                <div className="flex flex-col space-y-1.5 p-4 sm:p-6 pb-2 sm:pb-3">
+                    {/* Category Badge */}
+                    <div className="inline-flex items-center rounded-full border px-2 sm:px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-zinc-600/70 bg-transparent text-[10px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-zinc-300 whitespace-nowrap w-fit">
+                        {getText(project.category, language)}
+                    </div>
 
-                        {/* Category Badge */}
-                    <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-zinc-600/70 bg-transparent text-[12px] font-mono uppercase tracking-[0.16em] text-zinc-300 whitespace-nowrap w-fit">
-                            {project.category}
-                        </div>
-
-                        {/* Title + Description */}
-                        <div className="space-y-1">
-                            <h3 className="tracking-tight text-base md:text-lg font-semibold">
-                                {project.title}
-                            </h3>
-                            <p className="text-xs md:text-sm text-zinc-400">
-                                {project.description}
-                            </p>
-                        </div>
-
+                    {/* Title + Description */}
+                    <div className="space-y-1">
+                        <h3 className="tracking-tight text-sm sm:text-base md:text-lg font-semibold">
+                            {getText(project.title, language)}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-zinc-400">
+                            {getText(project.description, language)}
+                        </p>
+                    </div>
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 space-y-4 pt-1 flex-grow flex flex-col">
-
+                <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 pt-1 flex-grow flex flex-col">
                     {/* Tech Stack Tags */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {project.techStack.map((tech, index) => (
                             <div
                                 key={index}
-                                className="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 border-none bg-zinc-800/80 text-[11px] font-normal text-zinc-100"
+                                className="inline-flex items-center rounded-full border px-2 sm:px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 border-none bg-zinc-800/80 text-[10px] sm:text-[11px] font-normal text-zinc-100"
                             >
                                 {tech}
                             </div>
                         ))}
-
                     </div>
 
                     {/* Feature List */}
-                    <ul className="space-y-1.5 text-xs text-zinc-300">
-                        {project.features.map((feature, index) => (
+                    <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs text-zinc-300">
+                        {getArray(project.features, language).map((feature, index) => (
                             <li key={index} className="flex gap-2">
                                 <span className="mt-[3px] h-[3px] w-[3px] rounded-full bg-zinc-400 flex-shrink-0" />
                                 <span>{feature}</span>
@@ -89,59 +86,59 @@ const ProjectCard = ({ project }) => {
 
                     {/* Footer */}
                     <div className="flex items-center justify-end pt-2 text-xs text-zinc-400 border-t border-zinc-800/50">
-
-                        {/* Action Links */}
-                        <div className="flex items-center gap-3">
-
-                            {/* Live Demo Link (conditional) */}
+                        <div className="flex items-center gap-2 sm:gap-3">
                             {project.demoUrl && (
                                 <a
                                     href={project.demoUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-[11px] font-medium text-zinc-100 hover:text-white transition-colors"
+                                    className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-zinc-100 hover:text-white transition-colors"
                                 >
-                                    Live Demo <ExternalLink className="h-3.5 w-3.5" />
+                                    {getText({ en: "Live Demo", fr: "Démo en direct" }, language)} <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                                 </a>
                             )}
 
-                            {/* GitHub Code Link */}
                             {project.githubUrl && (
                                 <a
                                     href={project.githubUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-[11px] font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
+                                    className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
                                 >
-                                    Code <ExternalLink className="h-3.5 w-3.5" />
+                                    {getText({ en: "Code", fr: "Code" }, language)} <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                                 </a>
                             )}
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );
 };
 
 function Projects() {
+    const { language } = useLanguage();
+
+    const sectionTitle = {
+        en: "Projects",
+        fr: "Projets"
+    };
+
     return (
-        <section id="projects" className="min-h-screen py-20 px-4">
+        <section id="projects" className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
-                    Projects
+                    {getText(sectionTitle, language)}
                 </h2>
 
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
                     {projectData.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
+                        <ProjectCard key={index} project={project} language={language} />
                     ))}
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
 export default Projects
