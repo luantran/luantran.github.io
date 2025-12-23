@@ -17,7 +17,7 @@ import {
     FaJira,
     FaTerminal,
     FaGithub,
-    FaPlay, FaCloud, FaBrain, FaCode
+    FaPlay, FaCloud, FaBrain, FaCode, FaDatabase, FaServer, FaBug
 } from 'react-icons/fa'
 
 import {
@@ -26,7 +26,7 @@ import {
     SiCircleci,
     SiPytorch,
     SiNumpy,
-    SiFlask, SiJupyter, SiPandas, SiScikitlearn,
+    SiFlask, SiJupyter, SiPandas, SiScikitlearn, SiPostgresql, SiJunit5, SiGradle
 } from 'react-icons/si'
 
 import { TbTerminal2 } from 'react-icons/tb'
@@ -63,7 +63,13 @@ export const iconMap = {
     SiNumpy,
     SiJupyter,
     SiConcourse,
+    SiPostgresql,
+    SiJunit5,
+    FaBug,
     FaPlay,
+    FaDatabase,
+    FaServer,
+    SiGradle,
     // Domain icons
     FaCode,
     FaBrain,
