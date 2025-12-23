@@ -130,7 +130,7 @@ function Projects() {
     return (
         <section id="projects" className="min-h-screen py-20 px-4">
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-5xl font-bold text-white text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
                     Projects
                 </h2>
 
