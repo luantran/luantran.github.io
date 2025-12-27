@@ -53,7 +53,7 @@ function Skills() {
     return (
         <section id="skills" className="min-h-screen flex flex-col items-center justify-between">
             <div className="flex-grow flex items-center justify-center w-full">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
                         {getText(sectionTitle, language)}
                     </h2>
@@ -66,7 +66,7 @@ function Skills() {
 
                 </div>
             </div>
-            <SectionArrow targetSection="education" />
+            <SectionArrow targetSection="projects" />
         </section>
     )
 }

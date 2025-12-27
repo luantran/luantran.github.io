@@ -3,6 +3,7 @@ import { projectData } from './data/projects.js';
 import { useState } from "react";
 import { useLanguage } from '../contexts/useLanguage.js';
 import { getText, getArray } from '../utils/translationHelpers';
+import SectionArrow from "./SectionArrow.jsx";
 
 const ProjectCard = ({ project, language }) => {
     const [showGif, setShowGif] = useState(false);
@@ -126,18 +127,20 @@ function Projects() {
 
     return (
         <section id="projects" className="min-h-screen py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-8xl mx-auto mb-12">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
                     {getText(sectionTitle, language)}
                 </h2>
 
-                <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
+                <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {projectData.map((project, index) => (
                         <ProjectCard key={index} project={project} language={language} />
                     ))}
                 </div>
             </div>
+            <SectionArrow targetSection="experience" />
         </section>
+
     );
 }
 

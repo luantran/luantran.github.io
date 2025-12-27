@@ -14,7 +14,8 @@ export const educationData = [
         degree: {
             en: "Master's of Applied Computer Science",
             fr: "Maîtrise en informatique appliquée"
-        }
+        },
+        honors: null
     },
     {
         university: {
@@ -26,7 +27,8 @@ export const educationData = [
         degree: {
             en: "Bachelor's of Computer Engineering",
             fr: "Baccalauréat en génie informatique"
-        }
+        },
+        honors: null
     },
     {
         university: {
@@ -36,8 +38,12 @@ export const educationData = [
         date: '2012-2014',
         logo: cimfLogo,
         degree: {
-            en: 'French Baccalaureate - Highest Honors',
-            fr: 'Baccalauréat français - Mention très bien'
+            en: 'French Baccalaureate',
+            fr: 'Baccalauréat français'
+        },
+        honors: {
+            en: 'Highest Honors',
+            fr: "Mention Très Bien (Excellence)"
         }
     }
 ]

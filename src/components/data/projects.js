@@ -21,7 +21,7 @@ export const projectData = [
         ],
         image: methodologyPng,
         thumbnail: methodologyPng,
-        demoUrl: null,
+        demoUrl: "https://huggingface.co/collections/theluantran/cefr-classifiers-one-model-to-grade-them-all",
         githubUrl: "https://github.com/luantran/One-model-to-grade-them-all"
     },
     {
