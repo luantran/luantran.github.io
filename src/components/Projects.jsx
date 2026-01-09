@@ -44,8 +44,7 @@ const ProjectCard = ({ project, language }) => {
                 {/* Card Header */}
                 <div className="flex flex-col space-y-1.5 p-4 sm:p-6 pb-2 sm:pb-3">
                     {/* Category Badge */}
-                    <div className="inline-flex items-center rounded-full border px-2 sm:px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-zinc-600/70 bg-transparent text-[10px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-zinc-300 whitespace-nowrap w-fit">
-                        {getText(project.category, language)}
+                    <div className="inline-flex items-center rounded-full border px-2 sm:px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-zinc-400/50 bg-transparent text-[10px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-zinc-300 whitespace-nowrap w-fit">                        {getText(project.category, language)}
                     </div>
 
                     {/* Title + Description */}
