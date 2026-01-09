@@ -28,9 +28,9 @@ function App() {
 
                         <AboutMe />
                         <Skills />
-                        <Education />
-                        <Experience />
                         <Projects />
+                        <Experience />
+                        <Education />
                     </main>
 
                 </div>

@@ -1,3 +1,5 @@
+import councilPng from '../../assets/images/councilofclassifiers.png'
+import councilGif from '../../assets/gifs/councilofclassifiers.gif'
 import medicalImagingGif from '../../assets/gifs/multimodal_ui.gif';
 import medicalImagingPng from '../../assets/images/multimodal.png';
 import methodologyPng from '../../assets/images/methodology.png';
@@ -10,6 +12,22 @@ import portfolioPng from '../../assets/images/portfolio.png';
 
 export const projectData = [
     {
+        title: "Council of Classifiers",
+        description: "CEFR text classification web app combining the models from 'One model to grade them all' to predict English proficiency levels (A1-C2). Aggregates predictions using majority voting and confidence-weighted averaging for robust level estimation.",
+        category: "NLP / Web Application",
+        techStack: ["Python", "Flask",  "Google Cloud Run", "React", "PyTorch", "Transformers", "Docker", "HuggingFace",],
+        features: [
+            "Three-model ensemble architecture with individual model breakdowns, confidence scores, and probability distributions for each CEFR level",
+            "Flask REST API backend with React frontend for interactive text input and results visualization, dynamically loading pre-trained models from HuggingFace Hub",
+            "Models trained separately in the 'One model to grade them all' pipeline",
+            "Continuous deployment to Google Cloud Run using Cloud Build triggers from GitHub repository with containerized production environment"
+        ],
+        image: councilGif,
+        thumbnail: councilPng,
+        demoUrl: "https://councilofclassifiers.luantran.dev/",
+        githubUrl: "https://github.com/luantran/CouncilOfClassifiers"
+    },
+    {
         title: "One Model to Grade them All",
         description: "Comparative study of ML approaches for automatic CEFR level classification of English learner writing. Trained on EFCamDAT corpus and evaluated on multiple out-of-domain corpora (Write & Improve, ICNALE, ASAG) to assess cross-corpus generalization.",
         category: "NLP / Education",
@@ -21,7 +39,7 @@ export const projectData = [
         ],
         image: methodologyPng,
         thumbnail: methodologyPng,
-        demoUrl: null,
+        demoUrl: "https://huggingface.co/collections/theluantran/cefr-classifiers-one-model-to-grade-them-all",
         githubUrl: "https://github.com/luantran/One-model-to-grade-them-all"
     },
     {

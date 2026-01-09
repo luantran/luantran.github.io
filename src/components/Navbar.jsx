@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaUser, FaLightbulb, FaGraduationCap, FaBriefcase, FaFolderOpen, FaBars, FaTimes } from 'react-icons/fa'
+import {FaUser, FaLightbulb, FaGraduationCap, FaBriefcase, FaFolderOpen, FaBars, FaTimes, FaTools} from 'react-icons/fa'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useLanguage } from '../contexts/useLanguage.js';
 import { getText } from '../utils/translationHelpers'
@@ -37,17 +37,17 @@ function Navbar() {
     const navLabels = {
         about: { en: 'About', fr: 'À propos' },
         skills: { en: 'Skills', fr: 'Compétences' },
-        education: { en: 'Education', fr: 'Éducation' },
+        projects: { en: 'Projects', fr: 'Projets' },
         experience: { en: 'Experience', fr: 'Expérience' },
-        projects: { en: 'Projects', fr: 'Projets' }
+        education: { en: 'Education', fr: 'Éducation' }
     }
 
     const navItems = [
         { id: 'about', icon: FaUser, label: navLabels.about },
-        { id: 'skills', icon: FaLightbulb, label: navLabels.skills },
-        { id: 'education', icon: FaGraduationCap, label: navLabels.education },
+        { id: 'skills', icon: FaTools, label: navLabels.skills },
+        { id: 'projects', icon: FaFolderOpen, label: navLabels.projects },
         { id: 'experience', icon: FaBriefcase, label: navLabels.experience },
-        { id: 'projects', icon: FaFolderOpen, label: navLabels.projects }
+        { id: 'education', icon: FaGraduationCap, label: navLabels.education }
     ]
 
     return (

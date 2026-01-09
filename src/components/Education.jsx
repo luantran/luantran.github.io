@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/useLanguage.js';
 import { getText } from '../utils/translationHelpers';
 
 const EducationItem = ({ data, index, language }) => {
-    const { university, logo, degree, date } = data;
+    const { university, logo, degree, date, honors} = data;
 
     return (
         <div className={`group relative ${index > 0 ? 'my-[5px] sm:-mt-10 md:-mt-12 lg:-mt-14 xl:-mt-16' : 'my-[5px] sm:my-[3px]'} flex w-full sm:w-1/2 justify-start sm:justify-end sm:pr-[22px] sm:odd:justify-start sm:odd:self-end sm:odd:pl-[22px] sm:odd:pr-0 md:pr-[30px] md:odd:pl-[30px]`}>
@@ -52,6 +52,14 @@ const EducationItem = ({ data, index, language }) => {
                     >
                         {getText(degree, language)}
                     </p>
+                    {honors && (
+                        <p
+                            className="text-gray-300 mt-0.5 sm:mt-1 break-words"
+                            style={{ fontSize: 'clamp(0.6rem, 1.2vw + 0.25rem, 1rem)', fontStyle: 'italic' }}
+                        >
+                            {getText(honors, language)}
+                        </p>
+                    )}
                     <time
                         className="text-gray-400 mt-0.5 sm:mt-1 md:mt-2 break-words"
                         style={{ fontSize: 'clamp(0.7rem, 1.2vw + 0.25rem, 1.125rem)' }}
@@ -90,7 +98,6 @@ function Education() {
                     </div>
                 </div>
             </div>
-            <SectionArrow targetSection="experience" />
         </section>
     );
 }

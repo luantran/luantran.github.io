@@ -55,8 +55,8 @@ function Experience() {
     return (
         <section id="experience" className="min-h-screen flex flex-col items-center justify-between">
             <div className="flex-grow flex items-center justify-center w-full">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 w-full">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
+                <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 w-full">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12 mt-10">
                         {getText(sectionTitle, language)}
                     </h2>
 
@@ -69,7 +69,7 @@ function Experience() {
                     </div>
                 </div>
             </div>
-            <SectionArrow targetSection="projects"/>
+            <SectionArrow targetSection="education"/>
         </section>
     )
 }
