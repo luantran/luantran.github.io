@@ -77,3 +77,4 @@ jobs:
           destination_dir: ${{ steps.destination.outputs.dir }}
           keep_files: true
           force_orphan: false
+          cname: portfolio.luantran.dev
