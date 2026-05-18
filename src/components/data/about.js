@@ -1,4 +1,3 @@
-import resumePdf from '../../assets/resume.pdf'
 import profileImg from '../../assets/images/cropped-profile.jpg'
 
 export const aboutData = {
@@ -21,6 +20,6 @@ export const aboutData = {
         en: "Download CV",
         fr: "Télécharger CV"
     },
-    resume: resumePdf,
+    resume: `${import.meta.env.BASE_URL}Luan_Tran_CV.pdf`,
     image: profileImg
 }

@@ -38,7 +38,7 @@ function AboutMe() {
 
                                 <a
                                     href={aboutData.resume}
-                                    download
+                                    download="Luan_Tran_CV.pdf"
                                     className="flex items-center gap-2 bg-white text-blue-900 px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors font-semibold text-sm sm:text-base"
                                 >
                                     <FaFileDownload className="text-lg sm:text-xl" />
