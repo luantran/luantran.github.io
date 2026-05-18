@@ -20,6 +20,6 @@ export const aboutData = {
         en: "Download CV",
         fr: "Télécharger CV"
     },
-    resume: '/Luan_Tran_CV.pdf',
+    resume: `${import.meta.env.BASE_URL}Luan_Tran_CV.pdf`,
     image: profileImg
 }
